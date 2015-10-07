@@ -55,7 +55,9 @@ angular.module('starter.services', [])
       id: 0,
       name: 'Ben Sparrow',
       startText: 'Tel-Aviv',
+      fullStartAddress: 'Tel-Aviv, 64 Dizengof st.',
       destinationText: 'Nethanya',
+      fullDestinationAddress: 'Nethanya, 10 Giborey Israel st.',
       face: 'https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png'
     }, {
       id: 1,

@@ -1,12 +1,31 @@
-<ion-view view-title="{{route.name}}">
-  <!--ion-content class="padding">
-    <img ng-src="{{route.face}}" style="width: 64px; height: 64px">
-    <p>
-      {{route.lastText}}
-    </p>
+<ion-view view-title="Delivery from {{route.startText}} to {{route.destinationText}}">
+    <ion-content class="padding">
+        <div class="row">
+            <div class="col col-25">
+                <img ng-src="{{route.face}}" style="width: 64px; height: 64px"/>
+            </div>
+            <div class="col">
+                <p><strong>Pick Up: </strong>{{route.fullStartAddress}}</p>
+                <p><strong>Deliver to: </strong>{{route.fullDestinationAddress}}</p>
+            </div>
+        </div>
 
-  </ion-content-->
-    <ion-content ng-controller="MapCtrl">
-      <div id="map" data-tap-disabled="true"></div>
+
+        <div class="row">
+            <strong>
+                For this ride you will earn $25
+            </strong>
+        </div>
+
+        <div class="row">
+            <div class="col col-50 col-offset-25">
+                <br>
+                <button class="button icon-left ion-checkmark button-balanced"> I want this ride!</button>
+            </div>
+        </div>
+
     </ion-content>
+    <!--ion-content ng-controller="MapCtrl">
+      <div id="map" data-tap-disabled="true"></div>
+    </ion-content-->
 </ion-view>
