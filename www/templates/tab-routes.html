@@ -5,6 +5,11 @@
         <img ng-src="{{route.face}}">
         <h2>{{route.name}}</h2>
         <p>{{route.lastText}}</p>
+        <span>
+          {{route.startText}}
+          <span class="ion-android-arrow-forward"></span>
+          {{route.destinationText}}
+        </span>
         <i class="icon ion-chevron-right icon-accessory"></i>
 
         <ion-option-button class="button-assertive" ng-click="remove(route)">
