@@ -1,8 +1,12 @@
 <ion-view view-title="{{route.name}}">
-  <ion-content class="padding">
+  <!--ion-content class="padding">
     <img ng-src="{{route.face}}" style="width: 64px; height: 64px">
     <p>
       {{route.lastText}}
     </p>
-  </ion-content>
+
+  </ion-content-->
+    <ion-content ng-controller="MapCtrl">
+      <div id="map" data-tap-disabled="true"></div>
+    </ion-content>
 </ion-view>
