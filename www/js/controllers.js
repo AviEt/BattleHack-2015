@@ -78,7 +78,7 @@ angular.module('starter.controllers', [])
   $scope.rideApproved = false;
 
   $scope.takeRide = function() {
-    $scope.rideApproved
+    $scope.rideApproved = true;
 
     $http.get(BASE_URL + "/battle_hack/accept-delivery?id=" + $scope.delivery.id);
 
