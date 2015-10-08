@@ -88,9 +88,11 @@ angular.module('starter.controllers', [])
 })
 
 .controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
+  $scope.accountCreated = false;
+
+  $scope.createAccount = function() {
+    $scope.accountCreated = true;
+  }
 })
 .controller('MapCtrl', function($scope, $ionicLoading, $compile, $stateParams, Delivery) {
         function initialize() {

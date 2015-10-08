@@ -3,8 +3,17 @@
   margin: 0 auto;
 }
 
+.big-checkmark {
+  width: 200px;
+}
+
 .checkmark-panel {
   width:30px;
+}
+
+.big-checkmark-panel {
+  width:200px;
+  margin-top: 20px;
 }
 
 .path {

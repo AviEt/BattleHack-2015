@@ -3,6 +3,17 @@
     margin-left: auto;
     margin-right: auto;
     display: block;
+    text-align: center;
+}
+
+.venmo-logo {
+    width: 150px;
+}
+
+.account-created-text {
+    font-family: "Helvetica Neue", "Roboto", "Segoe UI", "sans-serif";
+    font-size: 28px;
+    color: #444;
 }
 
 .past-item {
