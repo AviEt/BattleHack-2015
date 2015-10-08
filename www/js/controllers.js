@@ -45,6 +45,7 @@ angular.module('starter.controllers', [])
 
 .controller('RouteDetailCtrl', function($scope, $stateParams, Routes) {
   $scope.route = Routes.get($stateParams.routeId);
+  $scope.rideApproved = false;
 })
 
 .controller('AccountCtrl', function($scope) {
