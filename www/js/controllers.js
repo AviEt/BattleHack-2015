@@ -87,11 +87,12 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('AccountCtrl', function($scope) {
+.controller('AccountCtrl', function($scope, $http, BASE_URL) {
   $scope.accountCreated = false;
 
   $scope.createAccount = function() {
     $scope.accountCreated = true;
+    $http.post(BASE_URL + "/bh/submerchant")
   }
 })
 .controller('MapCtrl', function($scope, $ionicLoading, $compile, $stateParams, Delivery) {
