@@ -1,0 +1,20 @@
+<ion-view view-title="Suggested Deliveries">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="delivery in deliveries" type="item-text-wrap" href="#/tab/deliveries/{{delivery.id}}">
+        <img ng-src="{{delivery.face}}">
+        <h2>{{delivery.itemName}}</h2>
+        <span>
+          {{delivery.startCity}}
+          <span class="ion-android-arrow-forward"></span>
+          {{delivery.destinationCity}}
+        </span>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(delivery)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

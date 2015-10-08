@@ -59,12 +59,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
-  .state('tab.routes', {
-      url: '/routes',
+  .state('tab.deliveries', {
+      url: '/deliveries',
       views: {
-        'tab-routes': {
-          templateUrl: 'templates/tab-routes.html',
-          controller: 'RoutesCtrl'
+        'tab-deliveries': {
+          templateUrl: 'templates/tab-deliveries.html',
+          controller: 'DeliveryCtrl'
         }
       }
     })
@@ -77,12 +77,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
-  .state('tab.route-detail', {
-        url: '/routes/:routeId',
+  .state('tab.delivery-detail', {
+        url: '/deliveries/:deliveryId',
         views: {
-          'tab-routes': {
-            templateUrl: 'templates/route-detail.html',
-            controller: 'RouteDetailCtrl'
+          'tab-deliveries': {
+            templateUrl: 'templates/delivery-detail.html',
+            controller: 'DeliveryDetailCtrl'
           }
         }
       })
