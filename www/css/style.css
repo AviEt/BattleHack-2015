@@ -1,1 +1,29 @@
 /* Empty. Add your own CSS if you like */
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.past-item {
+    padding-bottom: 10px;
+}
+
+.no-margin-top {
+    margin-top: 0px
+}
+
+.item-padding {
+    padding: 4px;
+}
+
+.delivery-cancel {
+    font-size: 22px;
+    float:right;
+    color: red;
+    margin-top: 2px;
+}
+
+.no-padding-right {
+    padding-right: 0px;
+}

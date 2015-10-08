@@ -1,28 +1,45 @@
 <ion-view view-title="Dashboard">
   <ion-content class="padding">
     <div class="list card">
-      <div class="item item-divider">Recent Updates</div>
+      <div class="item item-divider"><strong>Earnings</strong></div>
       <div class="item item-body">
         <div>
-          There is a fire in <b>sector 3</b>
+          You already earned <strong>${{earned}}</strong></b>
         </div>
       </div>
     </div>
     <div class="list card">
-      <div class="item item-divider">Health</div>
+      <div class="item item-divider"><strong>Awaiting delivery</strong></div>
       <div class="item item-body">
-        <div>
-          You ate an apple today!
+        <div class="list list-inset no-margin-top">
+          <div class="item item-padding item-text-wrap">
+            <div class="row">
+              <div class="col col-90">
+                Oct 9th: From Tel-Aviv to Nethanya
+              </div>
+              <div class="col col-5 no-padding-right">
+                <i class="ion-android-cancel delivery-cancel"></i>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
     <div class="list card">
-      <div class="item item-divider">Upcoming</div>
+      <div class="item item-divider"><strong>Past Deliveries</strong></div>
       <div class="item item-body">
-        <div>
-          You have <b>29</b> meetings on your calendar tomorrow.
+        <div class="past-item">
+          <strong>Oct 1st 2015:</strong> Tel-Aviv<span class="ion-android-arrow-forward"></span> Haifa
+        </div>
+        <div class="past-item">
+          <strong>Sep 24th 2015:</strong> Tel-Aviv<span class="ion-android-arrow-forward"></span> Nethanya
+        </div>
+
+        <div class="past-item">
+          <strong>Sep 21st 2015:</strong> Nethanya<span class="ion-android-arrow-forward"></span> Tel-Aviv
         </div>
       </div>
     </div>
+
   </ion-content>
 </ion-view>

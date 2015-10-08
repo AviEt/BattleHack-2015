@@ -63,26 +63,31 @@ angular.module('starter.services', [])
       id: 1,
       name: 'Max Lynx',
       startText: 'Tel-Aviv',
+      fullStartAddress: 'Tel-Aviv, 64 Dizengof st.',
       destinationText: 'Nethanya',
+      fullDestinationAddress: 'Nethanya, 10 Giborey Israel st.',
       face: 'https://avatars3.githubusercontent.com/u/11214?v=3&s=460'
     }, {
       id: 2,
       name: 'Adam Bradleyson',
       startText: 'Tel-Aviv',
+      fullStartAddress: 'Tel-Aviv, 64 Dizengof st.',
       destinationText: 'Nethanya',
-      face: 'https://pbs.twimg.com/profile_images/479090794058379264/84TKj_qa.jpeg'
+      fullDestinationAddress: 'Nethanya, 10 Giborey Israel st.',      face: 'https://pbs.twimg.com/profile_images/479090794058379264/84TKj_qa.jpeg'
     }, {
       id: 3,
       name: 'Perry Governor',
       startText: 'Tel-Aviv',
+      fullStartAddress: 'Tel-Aviv, 64 Dizengof st.',
       destinationText: 'Nethanya',
-      face: 'https://pbs.twimg.com/profile_images/598205061232103424/3j5HUXMY.png'
+      fullDestinationAddress: 'Nethanya, 10 Giborey Israel st.',      face: 'https://pbs.twimg.com/profile_images/598205061232103424/3j5HUXMY.png'
     }, {
       id: 4,
       name: 'Mike Harrington',
       startText: 'Tel-Aviv',
+      fullStartAddress: 'Tel-Aviv, 64 Dizengof st.',
       destinationText: 'Nethanya',
-      face: 'https://pbs.twimg.com/profile_images/578237281384841216/R3ae1n61.png'
+      fullDestinationAddress: 'Nethanya, 10 Giborey Israel st.',      face: 'https://pbs.twimg.com/profile_images/578237281384841216/R3ae1n61.png'
     }];
 
     return {
