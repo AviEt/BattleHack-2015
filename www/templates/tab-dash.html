@@ -12,10 +12,10 @@
       <div class="item item-divider"><strong>Awaiting delivery</strong></div>
       <div class="item item-body">
         <div class="list list-inset no-margin-top">
-          <div class="item item-padding item-text-wrap" ng-repeat="delivery in deliveries">
+          <div class="item item-padding item-text-wrap" ng-repeat="delivery in deliveries | filter: {type: 'FUTURE'}">
             <div class="row">
               <div class="col col-90">
-                <strong>{{delivery.date}}</strong>: From {{delivery.startText}} to {{delivery.destinationText}}
+                <strong>{{delivery.dueDate}}</strong>: From {{delivery.startCity}} to {{delivery.destinationCity}}
               </div>
               <div class="col col-5 no-padding-right">
                 <i class="ion-android-cancel delivery-cancel" ng-click="cancel(delivery)"></i>
@@ -28,15 +28,9 @@
     <div class="list card">
       <div class="item item-divider"><strong>Past Deliveries</strong></div>
       <div class="item item-body">
-        <div class="past-item">
-          <strong>Oct 1st 2015:</strong> Tel-Aviv<span class="ion-android-arrow-forward"></span> Haifa
-        </div>
-        <div class="past-item">
-          <strong>Sep 24th 2015:</strong> Tel-Aviv<span class="ion-android-arrow-forward"></span> Nethanya
-        </div>
-
-        <div class="past-item">
-          <strong>Sep 21st 2015:</strong> Nethanya<span class="ion-android-arrow-forward"></span> Tel-Aviv
+        <div class="past-item" ng-repeat="delivery in deliveries | filter: {type: 'PAST'}">
+          <strong>{{delivery.dueDate}}:</strong> {{delivery.startCity}}<span class="ion-android-arrow-forward"></span>
+          {{delivery.destinationCity}}
         </div>
       </div>
     </div>

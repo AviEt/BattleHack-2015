@@ -1,8 +1,15 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, FutureDeliveries) {
-  $scope.earned = 300;
-  $scope.deliveries = FutureDeliveries.all();
+.controller('DashCtrl', function($scope, $http, BASE_URL, Delivery) {
+
+  $http.get(BASE_URL + "/battle_hack/earnings")
+        .success(function(result) {
+          $scope.earned = 300;
+        });
+
+  Delivery.query(function (deliveries) {
+      $scope.deliveries = deliveries;
+    });
 
   $scope.cancel = function(delivery) {
     FutureDeliveries.remove(delivery);
