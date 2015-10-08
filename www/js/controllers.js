@@ -92,10 +92,12 @@ angular.module('starter.controllers', [])
     enableFriends: true
   };
 })
-.controller('MapCtrl', function($scope, $ionicLoading, $compile) {
+.controller('MapCtrl', function($scope, $ionicLoading, $compile, $stateParams, Delivery) {
         function initialize() {
-          var site = new google.maps.LatLng(32.0762665,34.7746955);
-          var hospital = new google.maps.LatLng(32.2773799,34.8597669);
+
+          var delivery = $scope.delivery;
+          var site = new google.maps.LatLng(parseFloat(delivery.startLongitue), parseFloat(delivery.startLatitue));
+          var hospital = new google.maps.LatLng(parseFloat(delivery.destinationLongitue), parseFloat(delivery.destinationLatitue));
 
           var mapOptions = {
             streetViewControl:true,
@@ -127,13 +129,13 @@ angular.module('starter.controllers', [])
           });
 
           var infowindow = new google.maps.InfoWindow({
-               content:"Project Location"
+               content:"Pickup"
           });
 
           infowindow.open(map,marker);
 
           var hospitalwindow = new google.maps.InfoWindow({
-               content:"Nearest Hospital"
+               content:"Delivery Destination"
           });
 
           hospitalwindow.open(map,hospitalRoute);
@@ -162,7 +164,15 @@ angular.module('starter.controllers', [])
 
         }
 
-        initialize();
+        Delivery.query(function(deliveries) {
+                      for (i = 0; i < deliveries.length; i++) {
+                        if(deliveries[i].id == $stateParams.deliveryId) {
+                          $scope.delivery = deliveries[i];
+                          initialize();
+                          break;
+                        }
+                      }
+        });
 
         $scope.centerOnMe = function() {
           if(!$scope.map) {
