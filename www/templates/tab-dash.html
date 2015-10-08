@@ -4,7 +4,7 @@
       <div class="item item-divider"><strong>Earnings</strong></div>
       <div class="item item-body">
         <div>
-          You already earned <strong>${{earned}}</strong></b>
+          Already earned &nbsp;&nbsp;&nbsp;&nbsp;<strong>${{earned}}</strong></b>
         </div>
       </div>
     </div>
@@ -12,13 +12,13 @@
       <div class="item item-divider"><strong>Awaiting delivery</strong></div>
       <div class="item item-body">
         <div class="list list-inset no-margin-top">
-          <div class="item item-padding item-text-wrap">
+          <div class="item item-padding item-text-wrap" ng-repeat="delivery in deliveries">
             <div class="row">
               <div class="col col-90">
-                Oct 9th: From Tel-Aviv to Nethanya
+                <strong>{{delivery.date}}</strong>: From {{delivery.startText}} to {{delivery.destinationText}}
               </div>
               <div class="col col-5 no-padding-right">
-                <i class="ion-android-cancel delivery-cancel"></i>
+                <i class="ion-android-cancel delivery-cancel" ng-click="cancel(delivery)"></i>
               </div>
             </div>
           </div>

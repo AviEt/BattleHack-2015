@@ -1,7 +1,12 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {
+.controller('DashCtrl', function($scope, FutureDeliveries) {
   $scope.earned = 300;
+  $scope.deliveries = FutureDeliveries.all();
+
+  $scope.cancel = function(delivery) {
+    FutureDeliveries.remove(delivery);
+  }
 })
 
 .controller('ChatsCtrl', function($scope, Chats) {

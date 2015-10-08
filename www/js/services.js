@@ -106,4 +106,35 @@ angular.module('starter.services', [])
         return null;
       }
     };
-  });
+  }).
+
+factory('FutureDeliveries', function() {
+      // Might use a resource here that returns a JSON array
+
+      // Some fake testing data
+      var deliveries = [{
+        id: 0,
+        startText: 'Tel-Aviv',
+        fullStartAddress: 'Tel-Aviv, 64 Dizengof st.',
+        destinationText: 'Nethanya',
+        fullDestinationAddress: 'Nethanya, 10 Giborey Israel st.',
+        date: 'Oct 9th 2015'
+      }];
+
+      return {
+        all: function() {
+          return deliveries;
+        },
+        remove: function(delivery) {
+          deliveries.splice(deliveries.indexOf(delivery), 1);
+        },
+        get: function(deliveryId) {
+          for (var i = 0; i < deliveries.length; i++) {
+            if (deliveries[i].id === parseInt((deliveryId))) {
+              return deliveries[i];
+            }
+          }
+          return null;
+        }
+      };
+    });
