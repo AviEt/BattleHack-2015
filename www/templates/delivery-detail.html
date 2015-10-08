@@ -2,10 +2,10 @@
     <ion-content class="padding">
         <div class="row">
             <div class="col col-25">
-                <img ng-src="img/{{delivery.image}}" style="width: 64px; height: 64px"/>
-                <p>{{delivery.itemName}}</p>
+                <img ng-src="img/{{delivery.image}}" class="item-image"/>
             </div>
-            <div class="col">
+            <div class="col delivery-item-col">
+                <h4>{{delivery.itemName}}</h4>
                 <p><strong>Pick Up: </strong>{{delivery.startFullAddress}}</p>
                 <p><strong>Deliver to: </strong>{{delivery.destinationFullAddress}}</p>
             </div>
