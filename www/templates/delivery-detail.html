@@ -11,19 +11,12 @@
             </div>
         </div>
 
-
-        <div class="row">
-            <strong>
-                For this ride you will earn ${{delivery.value}}
-            </strong>
-        </div>
-
         <div class="row">
             <div class="col">
                 <br/>
-                <button class="button icon-left button-small ion-checkmark button-balanced"
+                <button class="take-it-btn button icon-left button ion-checkmark button-balanced"
                         ng-click="takeRide()"
-                        ng-hide="rideApproved">Take it!</button>
+                        ng-hide="rideApproved"><strong>Take it for ${{delivery.value}}</strong></button>
             </div>
             <div class="checkmark-column col-10" ng-show="rideApproved">
                 <div class="checkmark-panel" >
