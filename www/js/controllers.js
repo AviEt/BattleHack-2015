@@ -72,8 +72,8 @@ angular.module('starter.controllers', [])
 })
 .controller('MapCtrl', function($scope, $ionicLoading, $compile) {
         function initialize() {
-          var site = new google.maps.LatLng(55.9879314,-4.3042387);
-          var hospital = new google.maps.LatLng(55.8934378,-4.2201905);
+          var site = new google.maps.LatLng(32.0762665,34.7746955);
+          var hospital = new google.maps.LatLng(32.2773799,34.8597669);
 
           var mapOptions = {
             streetViewControl:true,
