@@ -33,3 +33,12 @@
     height: 60%;
     margin-top: 15px;
 }
+
+.checkmark-column {
+    margin-top: 20px;
+}
+
+.shipit-column {
+    margin-top: 25px;
+    color:green;
+}

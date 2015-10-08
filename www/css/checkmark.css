@@ -1,7 +1,10 @@
 .checkmark {
   width: 30px;
   margin: 0 auto;
-  color:green;
+}
+
+.checkmark-panel {
+  width:30px;
 }
 
 .path {
