@@ -3,12 +3,16 @@
     <ion-list>
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="delivery in deliveries" type="item-text-wrap" href="#/tab/deliveries/{{delivery.id}}">
         <img ng-src="{{delivery.face}}">
-        <h2>{{delivery.itemName}}</h2>
-        <span>
+        <h3>{{delivery.itemName}}</h3>
+        <p>
+        <span><strong>
           {{delivery.startCity}}
           <span class="ion-android-arrow-forward"></span>
           {{delivery.destinationCity}}
+        </strong>
         </span>
+        </p>
+        <p class="delivery-distance">{{delivery.distance}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
 
         <ion-option-button class="button-assertive" ng-click="remove(delivery)">
