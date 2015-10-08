@@ -1,19 +1,20 @@
-<ion-view view-title="Delivery from {{route.startText}} to {{route.destinationText}}">
+<ion-view view-title="Delivery from {{delivery.startCity}} to {{delivery.destinationCity}}">
     <ion-content class="padding">
         <div class="row">
             <div class="col col-25">
-                <img ng-src="{{route.face}}" style="width: 64px; height: 64px"/>
+                <img ng-src="{{delivery.face}}" style="width: 64px; height: 64px"/>
+                <p>{{delivery.itemName}}</p>
             </div>
             <div class="col">
-                <p><strong>Pick Up: </strong>{{route.fullStartAddress}}</p>
-                <p><strong>Deliver to: </strong>{{route.fullDestinationAddress}}</p>
+                <p><strong>Pick Up: </strong>{{delivery.startFullAddress}}</p>
+                <p><strong>Deliver to: </strong>{{delivery.destinationFullAddress}}</p>
             </div>
         </div>
 
 
         <div class="row">
             <strong>
-                For this ride you will earn $25
+                For this ride you will earn ${{delivery.value}}
             </strong>
         </div>
 

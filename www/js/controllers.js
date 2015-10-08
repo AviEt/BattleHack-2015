@@ -48,8 +48,8 @@ angular.module('starter.controllers', [])
 .controller('DeliveryDetailCtrl', function($scope, $stateParams, Delivery) {
   Delivery.query(function(deliveries) {
     for (i = 0; i < deliveries.length; i++) {
-      if(deliveries[i].id === $stateParams.deliveryId) {
-        $scope.delivery = deliveries[i].id;
+      if(deliveries[i].id == $stateParams.deliveryId) {
+        $scope.delivery = deliveries[i];
         break;
       }
     }
