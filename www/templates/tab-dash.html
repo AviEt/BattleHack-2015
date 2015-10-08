@@ -29,7 +29,7 @@
       <div class="item item-divider"><strong>Past Deliveries</strong></div>
       <div class="item item-body">
         <div class="past-item" ng-repeat="delivery in deliveries | filter: {type: 'PAST'}">
-          <strong>{{delivery.dueDate}}:</strong> {{delivery.startCity}}<span class="ion-android-arrow-forward"></span>
+          <strong>{{delivery.dueDate}}:</strong> {{delivery.startCity}} <span class="ion-android-arrow-forward"></span>
           {{delivery.destinationCity}}
         </div>
       </div>
