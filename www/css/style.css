@@ -24,6 +24,12 @@
     padding-top: 0px;
 }
 
+
+.take-it-btn {
+    margin-top: -25px;
+    margin-bottom: 10px;
+}
+
 .no-margin-top {
     margin-top: 0px
 }

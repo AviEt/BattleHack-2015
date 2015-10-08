@@ -1,7 +1,9 @@
 <ion-view view-title="Suggested Deliveries">
   <ion-content>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="delivery in deliveries" type="item-text-wrap" href="#/tab/deliveries/{{delivery.id}}">
+      <ion-item class="item-remove-animate item-avatar item-icon-right"
+                ng-repeat="delivery in deliveries | filter: {type: 'SUGGESTED'}"
+                type="item-text-wrap" href="#/tab/deliveries/{{delivery.id}}">
         <img ng-src="img/{{delivery.image}}" class="list-item-image">
         <h3>{{delivery.itemName}}</h3>
         <p>
