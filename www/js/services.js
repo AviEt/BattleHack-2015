@@ -137,4 +137,18 @@ factory('FutureDeliveries', function() {
           return null;
         }
       };
-    });
+    }).
+
+factory('DeliveriesUpdater', function($http) {
+  var lastDeliveriesTimeStamp = 0;
+
+  return {
+    lastDeliveriesUpdate: function() {
+      return lastDeliveriesTimeStamp;
+    },
+
+    updateDeliveries: function() {
+      lastDeliveriesTimeStamp = lastDeliveriesTimeStamp + 1;
+    }
+  }
+});

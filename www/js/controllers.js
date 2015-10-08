@@ -1,19 +1,32 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, $http, BASE_URL, Delivery) {
+.controller('DashCtrl', function($scope, $http, BASE_URL, Delivery, DeliveriesUpdater) {
 
-  $http.get(BASE_URL + "/battle_hack/earnings")
-        .success(function(result) {
-          $scope.earned = 300;
-        });
+  var deliveriesLastUpdate = DeliveriesUpdater.lastDeliveriesUpdate();
 
-  Delivery.query(function (deliveries) {
+
+
+  setInterval(function() {
+    var newLastUpdate = DeliveriesUpdater.lastDeliveriesUpdate();
+     if(newLastUpdate > deliveriesLastUpdate) {
+      $scope.loadDeliveries();
+      deliveriesLastUpdate = newLastUpdate;
+      $scope.$digest();
+     }
+  }, 1000);
+
+  $scope.loadDeliveries = function() {
+    $http.get(BASE_URL + "/battle_hack/earnings")
+          .success(function(result) {
+            $scope.earned = result;
+          });
+
+    Delivery.query(function (deliveries) {
       $scope.deliveries = deliveries;
     });
-
-  $scope.cancel = function(delivery) {
-    FutureDeliveries.remove(delivery);
   }
+
+  $scope.loadDeliveries();
 })
 
 .controller('ChatsCtrl', function($scope, Chats) {
@@ -52,7 +65,7 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('DeliveryDetailCtrl', function($scope, $stateParams, Delivery) {
+.controller('DeliveryDetailCtrl', function($scope, $stateParams, $http, BASE_URL, Delivery, DeliveriesUpdater) {
   Delivery.query(function(deliveries) {
     for (i = 0; i < deliveries.length; i++) {
       if(deliveries[i].id == $stateParams.deliveryId) {
@@ -63,6 +76,15 @@ angular.module('starter.controllers', [])
 
   });
   $scope.rideApproved = false;
+
+  $scope.takeRide = function() {
+    $scope.rideApproved
+
+    $http.get(BASE_URL + "/battle_hack/accept-delivery?id=" + $scope.delivery.id);
+
+    DeliveriesUpdater.updateDeliveries();
+
+  }
 })
 
 .controller('AccountCtrl', function($scope) {
