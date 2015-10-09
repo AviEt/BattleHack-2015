@@ -95,10 +95,13 @@ angular.module('starter.controllers', [])
 .controller('AccountCtrl', function($scope, $http, BASE_URL) {
   $scope.accountCreated = false;
 
+  $http.get(BASE_URL + "/battle_hack"); // Just for making the server load everything
+
   $scope.createAccount = function() {
     $scope.accountCreated = true;
     $http.post(BASE_URL + "/bh/submerchant")
   }
+
 })
 .controller('MapCtrl', function($scope, $ionicLoading, $compile, $stateParams, Delivery) {
         function initialize() {
