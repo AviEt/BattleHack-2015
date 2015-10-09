@@ -58,12 +58,24 @@ angular.module('starter.controllers', [])
   //$scope.$on('$ionicView.enter', function(e) {
   //});
 
-  Delivery.query(function (deliveries) {
-    $scope.deliveries = deliveries;
-  });
+  $scope.updateDeliveries = function(deliveries) {
+    Delivery.query(function (deliveries) {
+      if(deliveries[0].type == "NONE") {
+        if(!$scope.deliveries) {
+          $scope.deliveries = deliveries;
+        }
+        setTimeout($scope.updateDeliveries, 2000);
+      } else {
+        $scope.deliveries = deliveries;
+      }
+    });
+  };
+
   $scope.remove = function(deliveries) {
     Delivery.remove(delivery);
   };
+
+  $scope.updateDeliveries();
 })
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
