@@ -14,8 +14,12 @@
         <div class="list list-inset no-margin-top">
           <div class="item item-padding item-text-wrap" ng-repeat="delivery in deliveries | filter: {type: 'FUTURE'}">
             <div class="row">
-              <div class="col col-90">
+              <div class="col col-60">
                 <strong>{{delivery.dueDate}}</strong>: From {{delivery.startCity}} to {{delivery.destinationCity}}
+              </div>
+              <div class="col col-40 col-center no-padding-right">
+                <button class="center button  icon-left ion-checkmark button-balanced"
+                        ng-click="completedDelivery(delivery)">Done</button>
               </div>
             </div>
           </div>

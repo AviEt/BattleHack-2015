@@ -27,6 +27,11 @@ angular.module('starter.controllers', [])
   }
 
   $scope.loadDeliveries();
+
+  $scope.completedDelivery = function(delivery) {
+    delivery.type = "PAST";
+    $http.get(BASE_URL + "/battle_hack/completed-delivery?id=" + delivery.id);
+  }
 })
 
 .controller('ChatsCtrl', function($scope, Chats) {
