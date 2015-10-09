@@ -29,8 +29,20 @@ angular.module('starter.controllers', [])
   $scope.loadDeliveries();
 
   $scope.completedDelivery = function(delivery) {
-    delivery.type = "PAST";
     $http.get(BASE_URL + "/battle_hack/completed-delivery?id=" + delivery.id);
+
+    var interval = setInterval(function() {
+      Delivery.query(function (deliveries) {
+            if(deliveries[0].type == "PAST") {
+              $scope.deliveries = deliveries;
+                  $http.get(BASE_URL + "/battle_hack/earnings")
+                        .success(function(result) {
+                          $scope.earned = result;
+                        });
+              clearInterval(interval);
+            }
+      });
+    }, 2000);
   }
 })
 
